@@ -9,11 +9,17 @@ public class BridgeDemo {
         Formatter printFormatter = new PrintFormatter();
         Printer moviePrinter = new MoviePrinter(movie);
 
+
         String printedMaterial = moviePrinter.print(printFormatter);
         System.out.println(printedMaterial);
 
         Formatter htmlFormatter = new HtmlFormatter();
         String htmlMaterial = moviePrinter.print(htmlFormatter);
         System.out.println(htmlMaterial);
+
+        //This makes it easy to change the output format by simply adding it into the Printer object
+        Formatter jsonFormatter = new JsonFormatter();
+        String jsonMaterial = moviePrinter.print(jsonFormatter);
+        System.out.println(jsonMaterial);
     }
 }
